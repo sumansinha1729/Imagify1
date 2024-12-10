@@ -13,7 +13,7 @@ export const AppContext=createContext();
     const [token,setToken]=useState(localStorage.getItem('token'));
     const [credit,setCredit]=useState(false);
 
-    const backendUrl=import.meta.env.VITE_BACKEND_URL;
+    const backendUrl="https://imagify1-3.onrender.com";
 
     const navigate=useNavigate()
 
