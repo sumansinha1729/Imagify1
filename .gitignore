@@ -1,0 +1,4 @@
+# For Node.js projects
+node_modules/
+.env
+.DS_Store
