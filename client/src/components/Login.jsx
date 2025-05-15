@@ -17,24 +17,24 @@ const Login = () => {
    const onSubmitHandler=async(e)=>{
       e.preventDefault();
       try {
-        if(state==='login'){
-         const{data}= await axios.post(backendUrl+'/api/user/login',{email,password})
+        if(state==='Log in'){
+         const res= await axios.post(backendUrl+'/api/user/login',{email,password})
 
-         if(data.success){
-          setToken(data.token)
-          setUser(data.user)
-          localStorage.setItem('token',data.token)
+         if(res.data.success){
+          setToken(res.data.token)
+          setUser(res.data.user)
+          localStorage.setItem('token',res.data.token)
           setShowLogin(false)
         }else{
           toast.error(data.message)
         }
         }else{
-          const{data}= await axios.post(backendUrl+'/api/user/register',{name,email,password})
+          const res= await axios.post(backendUrl+'/api/user/register',{name,email,password})
 
-          if(data.success){
-           setToken(data.token)
-           setUser(data.user)
-           localStorage.setItem('token',data.token)
+          if(res.data.success){
+           setToken(res.data.token)
+           setUser(res.data.user)
+           localStorage.setItem('token',res.data.token)
            setShowLogin(false)
          }else{
            toast.error(data.message)
